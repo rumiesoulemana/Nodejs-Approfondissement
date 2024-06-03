@@ -7,6 +7,12 @@ const articleSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  status: {
+    type: String,
+    enum: ['draft', 'published'],
+    required: true,
+    default: 'draft'
+  }
 });
 
 let Article;
