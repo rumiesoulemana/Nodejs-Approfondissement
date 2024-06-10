@@ -13,6 +13,11 @@ class ArticleService {
   async deleteArticle(id) {
     return await Article.findByIdAndDelete(id);
   }
+
+  async getArticlesByUserId(userId) {
+    return await Article.find({ user: userId }).populate('user', '-password');
+  }
+
 }
 
 module.exports = new ArticleService();

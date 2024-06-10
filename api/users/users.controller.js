@@ -73,6 +73,16 @@ class UsersController {
       next(err);
     }
   }
+  async getArticlesByUserId(req, res, next) {
+    try {
+      const userId = req.params.userId;
+      const articles = await articlesService.getArticlesByUserId(userId);
+      res.json(articles);
+    } catch (err) {
+      next(err);
+    }
+  }
+
 }
 
 module.exports = new UsersController();
