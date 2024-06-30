@@ -31,5 +31,3 @@ module.exports = async (req, res, next) => {
     next(new UnauthorizedError(error.message || error));
   }
 };
-
-
